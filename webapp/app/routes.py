@@ -15,3 +15,12 @@ def camera():
 @app.route('/gallery')
 def gallery():
 	return render_template('gallery.html', title='Gallery')
+
+@app.route('/postmethod', methods = ['POST'])
+def postmethod():
+	img = request.form['javascript_data']
+	return img
+
+@app.route('/getmethod/<jsdata>')
+def get_img(img):
+	return img
