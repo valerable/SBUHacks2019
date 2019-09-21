@@ -18,11 +18,14 @@ def gallery():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	return send_from_directory('/myimages','test.jpeg')
+	return "I GOT THE POST"
+	#return send_from_directory('/myimages','test.jpeg')
 
 def send_to_img_processor(img):
 	dir = os.path.dirname(__file__)
 	img_processor_path = dir + '/../../Neural-Style-Transfer/Network.py'
-	final_img_path = dir + '/../../Neural-Style-Transfer/Network.py'
+	
+	style_img_dir = dir + '/../../Neural-Style-Transfer/images/inputs/style/'
+	final_img_path = dir + '/../../final/'
 
-	os.system()
+	os.system('python ')
