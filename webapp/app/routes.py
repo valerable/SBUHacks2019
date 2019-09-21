@@ -20,8 +20,10 @@ def gallery():
 
 @app.route("/upload", methods=['POST'])
 def upload():
+	print("first step")
 	myid = random.randint(1,5000)
 	if request.method == 'POST':
+		print('did this work?')
 		file = request.files['file']
 		if file:
 			filename = secure_filename(file.filename)
