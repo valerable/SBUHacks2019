@@ -31,14 +31,12 @@ def upload():
 		print('did this work?')
 		d = request.form.to_dict()
 		data_url = d['imageBase64']   # here parse the data_url out http://xxxxx/?image={dataURL}
-		print(type(data_url))
-		print(data_url)
 		data_url = str(data_url)
 		content = data_url.split(';')[1]
 		image_encoded = content.split(',')[1]
 		image_b64 = base64.standard_b64decode(image_encoded.encode('utf-8'))
-		print('request')
-		path = "/../../final/", "base_" + str(myid) + ".jpg"
+		path = "/../../final/" + "base_" + str(myid) + ".jpg"
+
 		fh = open(path, "w+")
 		fh.write(image_b64.decode('base64'))
 		fh.close()
