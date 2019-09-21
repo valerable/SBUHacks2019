@@ -6,7 +6,7 @@ from flask import render_template
 def index():
 	return render_template('index.html', title='Home')
 	
-@app.route('/camera', methods=['GET', 'POST'])
+@app.route('/camera')
 def camera():
 	return render_template('camera.html', title='Camera')
 
@@ -14,7 +14,7 @@ def camera():
 def gallery():
 	return render_template('gallery.html', title='Gallery')
 
-@app.route('/postmethod', methods = ['POST'])
+@app.route('/post_image', methods = ['POST'])
 def postmethod():
 	img = request.form['javascript_data']
 	return img
