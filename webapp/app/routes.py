@@ -19,7 +19,7 @@ def gallery():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	return render_template('gallery.html', title='Gallery', count=n)
+	return render_template('gallery.html', title='Gallery')
 
 
 def count_images():
