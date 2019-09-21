@@ -8,29 +8,14 @@
 
       function startWebcam() {
         if (navigator.mediaDevices.getUserMedia) {
-          navigator.mediaDevices.getUserMedia(
-
-              // constraints
-              {
-                video: true,
-                audio: false
-              }).then(
-
-              // successCallback
-              function(localMediaStream) {
-                console.log(webcamStream);
-                video.src = window.URL.createObjectURL(localMediaStream);
-                webcamStream = localMediaStream;
-              })
-            .catch(
-              // errorCallback
-              function(err) {
-                console.log("The following error occured: "   err);
-              })
-
-      } else {
-        console.log("getUserMedia not supported");
-      }
+          navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function (stream) {
+              video.srcObject = stream;
+          })
+          .catch(function (err0r) {
+            console.log("Something went wrong!");
+          });
+}
       }
 
 
