@@ -6,8 +6,7 @@ from flask import render_template
 def index():
 	user = {'username': 'Judy'}
 	return render_template('index.html', title='Home', user=user)
-
-
+	
 @app.route('/camera')
 def camera():
 	return render_template('camera.html', title='Camera')
