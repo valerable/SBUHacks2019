@@ -27,19 +27,17 @@ def gallery():
 @app.route("/upload", methods=['POST'])
 def upload():
 	myid = random.randint(1,5000)
+	mydir = os.path.dirname(__file__)
 	if request.method == 'POST':
 		print('did this work?')
-
-		data_url = request.form('imageBase64')   # here parse the data_url out http://xxxxx/?image={dataURL}
-		print(type(data_url))
-		print(data_url)
+		d = request.form.to_dict()
+		data_url = d['imageBase64']   # here parse the data_url out http://xxxxx/?image={dataURL}
 		data_url = str(data_url)
 		content = data_url.split(';')[1]
 		image_encoded = content.split(',')[1]
-		image_b64 = base64.decodebytes(image_encoded.encode('utf-8'))
-		print('request')
-		path = "/../../final/", "base_" + myid + ".jpg"
-		fh = open(path, "wb")
+		image_b64 = base64.standard_b64decode(image_encoded.encode('utf-8'))
+		path = mydir + '/../../final/' + 'base_' + str(myid) + '.jpg'
+		fh = open(path, "w+")
 		fh.write(image_b64.decode('base64'))
 		fh.close()
 		print('maybe')
@@ -92,6 +90,6 @@ def send_to_img_processor(img,index,myid):
 	os.system('python' + ' ' + img_processor_path + ' ' + base_img + ' ' + style_img_dir + styles_list[index] + '.jpg' + ' ' + final_img_path + '--num_iter' + ' ' + str(iterations))
 	#now we have to move the final iteration to a different folder
 	gallery_path = '/static/gallery/'
-	os.system('mv' + ' ' + final_img_path + '_at_iteration_' + iterations + '.png' + ' ' + gallery_path + 'final_image_' + str(myid) + '.png')
+	os.system('mv' + ' ' + final_img_path + '_at_iteration_' + str(iterations) + '.png' + ' ' + gallery_path + 'final_image_' + str(myid) + '.png')
 	#after the move, we delete the tmp fodler
 	os.system('rm -rf' + ' ' + final_img_path + ' ' + img)
