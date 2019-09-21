@@ -70,7 +70,10 @@ function snapshot() {
 		url : "/upload",
 		contentType: 'application/json;charset=UTF-8',
 		data : { 
-			img: dataURL }
+			imageBase64: dataURL 
+		}
+	}).done(function() {
+  		console.log('sent');
 	});
 
 }

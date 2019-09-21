@@ -3,6 +3,12 @@ from flask import Flask, render_template, make_response
 from flask import redirect, request, jsonify, url_for
 import os
 import random
+import numpy as np
+from PIL import Image
+import base64
+import re
+import cStringIO
+
 
 @app.route('/')
 @app.route('/index')
@@ -23,17 +29,15 @@ def upload():
 	myid = random.randint(1,5000)
 	if request.method == 'POST':
 		print('did this work?')
-		file = request.files['img']
-		type(file)
-		print(file)
-		if file:
-			print("last if statement")
-			filename = secure_filename(file.filename)
-			path = "/../../final/", "base_" + myid + ".jpg"
-			file.save(os.path.join(os.getcwd()+ path))
-			print(path)
-			send_to_img_processor(path, 4, myid)
-			return "I worked"
+		image_b64 = request.values['imageBase64']
+		path = "/../../final/", "base_" + myid + ".jpg"
+		fh = open(path, "wb")
+		fh.write(image_b64.decode('base64'))
+		fh.close()
+		print('maybe')
+		send_to_img_processor(path, 4, myid)
+		print('it did')
+		return "I worked"
 
 
 @app.route("/postsuccess", methods=['GET'])
