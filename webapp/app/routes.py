@@ -2,6 +2,13 @@ from app import app
 from flask import Flask, render_template, make_response
 from flask import redirect, request, jsonify, url_for
 import os
+import random
+import numpy as np
+from PIL import Image
+import base64
+import re
+import cStringIO
+
 
 @app.route('/')
 @app.route('/index')
@@ -19,9 +26,19 @@ def gallery():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	if request.method == "POST":
-		clicked=request.json['data']
-	return render_template('postsuccess.html', title='Gallery')
+	myid = random.randint(1,5000)
+	if request.method == 'POST':
+		print('did this work?')
+		image_b64 = request.values['imageBase64']
+		path = "/../../final/", "base_" + myid + ".jpg"
+		fh = open(path, "wb")
+		fh.write(image_b64.decode('base64'))
+		fh.close()
+		print('maybe')
+		send_to_img_processor(path, 4, myid)
+		print('it did')
+		return "I worked"
+
 
 @app.route("/postsuccess", methods=['GET'])
 def postsuccess():
@@ -34,6 +51,7 @@ def count_images():
 	return image_sum
 
 def send_to_img_processor(img,index,myid):
+	base_img = img
 	mydir = os.path.dirname(__file__)
 	styles_list = [
 	'Blue\ Strokes',
@@ -68,4 +86,4 @@ def send_to_img_processor(img,index,myid):
 	gallery_path = '/static/gallery/'
 	os.system('mv' + ' ' + final_img_path + '_at_iteration_' + iterations + '.png' + ' ' + gallery_path + 'final_image_' + str(myid) + '.png')
 	#after the move, we delete the tmp fodler
-	os.system('rm -rf' + ' ' + final_img_path)
+	os.system('rm -rf' + ' ' + final_img_path + ' ' + img)
