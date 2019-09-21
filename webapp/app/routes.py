@@ -88,6 +88,6 @@ def send_to_img_processor(img,index,myid):
 	final_img_path = mydir + '/../../final/' + str(myid) + '/'
 	iterations = 7
 	#this function calls the img processor
-	os.system('python' + ' ' + img_processor_path + ' ' + base_img + ' ' + style_img_dir + styles_list[index] + '.jpg' + ' ' + final_img_path + '--num_iter' + ' ' + str(iterations), stdout=subprocess.PIPE, shell=True)
+	os.system('python' + ' ' + img_processor_path + ' ' + base_img + ' ' + style_img_dir + styles_list[index] + '.jpg' + ' ' + final_img_path + '--num_iter' + ' ' + str(iterations))
 	#now we have to move the final iteration to a different folder
 	#This makes the wait possible
