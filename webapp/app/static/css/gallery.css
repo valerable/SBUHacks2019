@@ -1,38 +1,40 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+@import url(https: //fonts.googleapis.com/css?family=Raleway:300);
 
 *, *:before, *:after {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -mos-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.row {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0;
-  clear: both;
+html {
+    height: 100%;
 }
 
-.row img {
-  max-width: 100%;
-  height: auto;
-  padding: 0;
-  margin:0;
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #342643;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    padding: 3%;
+    margin: auto;
+    max-width: 80%;
+    text-align: center;
+    display: block;
 }
 
 .gallery {
-  padding: 40px 0 300px;
-  position: relative;
-  overflow: hidden;
+    padding: 40px 0 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-,gallery ul li {
-  float:left;
-  margin: 0 0.877192825%;
-  overflow:hidden;
-}
-
-header {
-
+.gallery > img {
+    float: left;
+    margin: 0 0.877192825%;
+    overflow: hidden;
+    max-width: 50%;
 }
