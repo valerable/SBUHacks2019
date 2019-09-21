@@ -69,7 +69,8 @@ function snapshot() {
 		type : 'POST',
 		url : "/upload",
 		contentType: 'application/json;charset=UTF-8',
-		data : { img: dataURL }
+		data : { 
+			img: dataURL }
 	});
 
 }
