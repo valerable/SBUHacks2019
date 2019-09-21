@@ -1,17 +1,18 @@
 from app import app
-from flask import render_template
+from flask import Flask, render_template, make_response
+from flask import redirect, request, jsonify, url_for
 
 @app.route('/')
 @app.route('/index')
 def index():
 	return render_template('index.html', title='Home')
 	
-@app.route('/camera',methods = ['GET','POST'])
+@app.route('/camera', methods = ['GET','POST'])
 def camera():
-	if request.method == 'POST':
-		return "post hello"
-	else:
+	if request.method == 'GET':
 		return render_template('camera.html', title='Camera')
+	else:
+		return jsonify(request.form['userID'], request.form['file'])
 
 @app.route('/gallery')
 def gallery():
