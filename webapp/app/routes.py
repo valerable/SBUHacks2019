@@ -11,7 +11,6 @@ def index():
 
 @app.route('/camera', methods = ['GET'])
 def camera():
-	print("does this work?")
 	return render_template('camera.html', title='Camera')
 
 @app.route('/gallery')
@@ -21,19 +20,20 @@ def gallery():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	print("first step")
 	myid = random.randint(1,5000)
 	if request.method == 'POST':
 		print('did this work?')
 		file = request.files['file']
+		type(file)
+		print(file)
 		if file:
+			print("last if statement")
 			filename = secure_filename(file.filename)
 			path = "/../../final/", "base_" + myid + ".jpg"
 			file.save(os.path.join(os.getcwd()+ path))
 			print(path)
-			tasks = []
 			send_to_img_processor(path, 4, myid)
-			return jsonify({'tasks': tasks})
+			return "I worked"
 
 
 @app.route("/postsuccess", methods=['GET'])
