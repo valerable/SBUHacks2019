@@ -11,6 +11,7 @@ def index():
 
 @app.route('/camera', methods = ['GET'])
 def camera():
+	print("does this work?")
 	return render_template('camera.html', title='Camera')
 
 @app.route('/gallery')
