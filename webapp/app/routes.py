@@ -28,4 +28,4 @@ def send_to_img_processor(img):
 	style_img_dir = dir + '/../../Neural-Style-Transfer/images/inputs/style/'
 	final_img_path = dir + '/../../final/'
 
-	os.system('python ' + )
+	os.system('python ')
