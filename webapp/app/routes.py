@@ -30,6 +30,8 @@ def upload():
 	if request.method == 'POST':
 		print('did this work?')
 		data_url = request.args.get('image')   # here parse the data_url out http://xxxxx/?image={dataURL}
+		type(data_url)
+		data_url = str(data_url)
 		content = data_url.split(';')[1]
 		image_encoded = content.split(',')[1]
 		image_b64 = base64.decodebytes(image_encoded.encode('utf-8'))
