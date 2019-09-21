@@ -27,6 +27,7 @@ def gallery():
 @app.route("/upload", methods=['POST'])
 def upload():
 	myid = random.randint(1,5000)
+	mydir = os.path.dirname(__file__)
 	if request.method == 'POST':
 		print('did this work?')
 		d = request.form.to_dict()
@@ -35,8 +36,7 @@ def upload():
 		content = data_url.split(';')[1]
 		image_encoded = content.split(',')[1]
 		image_b64 = base64.standard_b64decode(image_encoded.encode('utf-8'))
-		path = "/../../final/" + "base_" + str(myid) + ".jpg"
-
+		path = mydir + '/../../final/' + 'base_' + str(myid) + '.jpg'
 		fh = open(path, "w+")
 		fh.write(image_b64.decode('base64'))
 		fh.close()
