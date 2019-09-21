@@ -85,7 +85,7 @@ def send_to_img_processor(img,index,myid):
 	img_processor_path = mydir + '/../../Neural-Style-Transfer/Network.py'
 	base_img = img
 	style_img_dir = mydir + '/../../Neural-Style-Transfer/images/inputs/style/'
-	final_img_path = mydir + '/../../final/' + 'myid/'
+	final_img_path = mydir + '/../../final/' + str(myid) + '/'
 	iterations = 7
 	#this function calls the img processor
 	p = subprocess.Popen('python' + ' ' + img_processor_path + ' ' + base_img + ' ' + style_img_dir + styles_list[index] + '.jpg' + ' ' + final_img_path + '--num_iter' + ' ' + str(iterations), stdout=subprocess.PIPE, shell=True)
