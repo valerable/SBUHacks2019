@@ -27,8 +27,9 @@ def upload():
 			filename = secure_filename(file.filename)
 			path = "/../../final/", "base_" + myid + ".jpg"
 			file.save(os.path.join(os.getcwd()+ path))
+			print(path)
 			tasks = []
-			send_to_img_processor(path,4,myid)
+			send_to_img_processor(path, 4, myid)
 			return jsonify({'tasks': tasks})
 
 
