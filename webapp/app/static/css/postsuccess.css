@@ -1,0 +1,53 @@
+@import url(https: //fonts.googleapis.com/css?family=Raleway:300);
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #342643;
+    height: 100%;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    margin: 1px;
+    max-width: 10%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: white;
+    color: #342643;
+    border-radius: 26px;
+    transition: all 0.2s ease-in-out;
+}
+
+#message {
+    padding-top: 20%;
+    display: block;
+    margin: auto;
+    max-width: 60%;
+    text-align: center;
+}
