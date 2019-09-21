@@ -6,8 +6,10 @@ from flask import render_template
 def index():
 	return render_template('index.html', title='Home')
 	
-@app.route('/camera')
+@app.route('/camera',methods = ['POST'])
 def camera():
+	if request.method == 'POST':
+		print("helllo")
 	return render_template('camera.html', title='Camera')
 
 @app.route('/gallery')
