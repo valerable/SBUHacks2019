@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -mos-box-sizing: border-box;
+}
+
+.row {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0;
+  clear: both;
+}
+
+.row img {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin:0;
+}
+
+.gallery {
+  padding: 40px 0 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+,gallery ul li {
+  float:left;
+  margin: 0 0.877192825%;
+  overflow:hidden;
+}
+
+header {
+
+}

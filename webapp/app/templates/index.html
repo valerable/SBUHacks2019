@@ -1,12 +1,28 @@
 <html>
-    <head>
-        <title>{{ title }} - art sbuhacks</title>
-    </head>
-    <body>
-        <h1>Hello, {{ user.username }}!</h1>
-	<form>
-	<input type="button" value="Camera" onclick="window.location.href='/camera'"/>
-	<input type="button" value="Gallery" onclick="window.location.href='/gallery'"/>
-	</form>
-    </body>
+
+<head>
+  <title>{{ title }} - art sbuhacks</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+
+  <div class="text-wrapper">
+    <div class="title" data-content="hello">
+      hello
+    </div>
+
+    <div class="subtitle" data-content="Oops, the page you're looking for doesn't exist">
+      Oops, the page you're looking for doesn't exist.
+    </div>
+
+    <div class="buttons">
+      <form>
+        <input type="button" value="Camera" onclick="window.location.href='/camera'" />
+        <input type="button" value="Gallery" onclick="window.location.href='/gallery'" />
+      </form>
+    </div>
+  </div>
+</body>
+
 </html>
