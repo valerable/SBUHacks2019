@@ -68,7 +68,6 @@ function snapshot() {
 	$.ajax({
 		type : 'POST',
 		url : "/upload",
-		dataType : 'json',
 		data : { 
 			imageBase64: dataURL 
 		}
