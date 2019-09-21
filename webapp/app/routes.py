@@ -29,7 +29,8 @@ def upload():
 	myid = random.randint(1,5000)
 	if request.method == 'POST':
 		print('did this work?')
-		image_b64 = request.values['imageBase64']
+		image_b64 = request.from['imageBase64']
+
 		print('request')
 		path = "/../../final/", "base_" + myid + ".jpg"
 		fh = open(path, "wb")
