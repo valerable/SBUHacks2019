@@ -65,8 +65,6 @@ function snapshot() {
 	document.querySelector('#dl-btn').href = dataURL;
 	console.log(dataURL)
 	//NOW WE NEED TO SEND IT TO FLASK
-	
-	fd.append("myFile", blob);
 	$.ajax({
 		type : 'POST',
 		url : "{{url_for('upload')}}",
