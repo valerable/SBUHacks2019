@@ -8,6 +8,7 @@ from PIL import Image
 import base64
 import re
 import cStringIO
+import subprocess
 
 
 @app.route('/')
@@ -84,12 +85,9 @@ def send_to_img_processor(img,index,myid):
 	img_processor_path = mydir + '/../../Neural-Style-Transfer/Network.py'
 	base_img = img
 	style_img_dir = mydir + '/../../Neural-Style-Transfer/images/inputs/style/'
-	final_img_path = mydir + '/../../final/' + 'myid/'
+	final_img_path = mydir + '/../../final/' + str(myid) + '/'
 	iterations = 7
 	#this function calls the img processor
 	os.system('python' + ' ' + img_processor_path + ' ' + base_img + ' ' + style_img_dir + styles_list[index] + '.jpg' + ' ' + final_img_path + '--num_iter' + ' ' + str(iterations))
 	#now we have to move the final iteration to a different folder
-	gallery_path = '/static/gallery/'
-	os.system('mv' + ' ' + final_img_path + '_at_iteration_' + str(iterations) + '.png' + ' ' + gallery_path + 'final_image_' + str(myid) + '.png')
-	#after the move, we delete the tmp fodler
-	os.system('rm -rf' + ' ' + final_img_path + ' ' + img)
+	#This makes the wait possible
