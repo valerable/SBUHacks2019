@@ -4,10 +4,9 @@ from flask import render_template
 @app.route('/')
 @app.route('/index')
 def index():
-	user = {'username': 'Judy'}
-	return render_template('index.html', title='Home', user=user)
+	return render_template('index.html', title='Home')
 	
-@app.route('/camera')
+@app.route('/camera', methods=['GET', 'POST'])
 def camera():
 	return render_template('camera.html', title='Camera')
 
