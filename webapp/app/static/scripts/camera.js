@@ -67,7 +67,7 @@ function snapshot() {
 	//NOW WE NEED TO SEND IT TO FLASK
 	$.ajax({
 		type : 'POST',
-		url : '/upload',
+		url : "/upload",
 		contentType: 'application/json;charset=UTF-8',
 		data : { img: dataURL }
 	});

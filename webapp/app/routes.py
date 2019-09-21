@@ -23,7 +23,7 @@ def upload():
 	myid = random.randint(1,5000)
 	if request.method == 'POST':
 		print('did this work?')
-		file = request.files['file']
+		file = request.files['data']
 		type(file)
 		print(file)
 		if file:
