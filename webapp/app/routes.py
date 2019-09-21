@@ -23,7 +23,7 @@ def upload():
 
 @app.route("/postsuccess", methods=['GET'])
 def postsuccess():
-return render_template('postsuccess.html')
+	return render_template('postsuccess.html')
 
 def count_images():
 	gallery_path = '/static/gallery/'
