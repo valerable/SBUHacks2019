@@ -5,6 +5,22 @@
 </head>
 
 <body>
+
+<p> app goes here </p>
+	<body onload="init();">
+	  <h1>Take a snapshot of the current video stream</h1> Click on the Start WebCam button.
+	  <p>
+	    <button onclick="startWebcam();">Start WebCam</button>
+	    <button type="submit" id="dl-btn" href="#" download="participant.jpeg" onclick="snapshot();">Take Snapshot</button>
+	  </p>
+	  <video onclick="snapshot();" width=400 height=400 id="video" controls autoplay></video>
+	  <p>
+
+	    Screenshots :
+	    <p>
+	      <canvas id="myCanvas" width="400" height="350"></canvas>
+	    </p>
+
 	<script type="text/javascript">
 	//--------------------
       // GET USER MEDIA CODE
@@ -69,19 +85,5 @@
 
       }
 </script>
-<p> app goes here </p>
-	<body onload="init();">
-	  <h1>Take a snapshot of the current video stream</h1> Click on the Start WebCam button.
-	  <p>
-	    <button onclick="startWebcam();">Start WebCam</button>
-	    <button type="submit" id="dl-btn" href="#" download="participant.jpeg" onclick="snapshot();">Take Snapshot</button>
-	  </p>
-	  <video onclick="snapshot();" width=400 height=400 id="video" controls autoplay></video>
-	  <p>
-
-	    Screenshots :
-	    <p>
-	      <canvas id="myCanvas" width="400" height="350"></canvas>
-	    </p>
 </body>
 </html>
