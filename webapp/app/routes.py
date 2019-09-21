@@ -36,7 +36,7 @@ def upload():
 		data_url = str(data_url)
 		content = data_url.split(';')[1]
 		image_encoded = content.split(',')[1]
-		image_b64 = base64.decodebytes(image_encoded.encode('utf-8'))
+		image_b64 = base64.standard_b64decode(image_encoded.encode('utf-8'))
 		print('request')
 		path = "/../../final/", "base_" + myid + ".jpg"
 		fh = open(path, "wb")
