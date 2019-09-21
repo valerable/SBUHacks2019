@@ -7,22 +7,14 @@ from flask import redirect, request, jsonify, url_for
 def index():
 	return render_template('index.html', title='Home')
 	
-@app.route('/camera', methods = ['GET','POST'])
+@app.route('/camera', methods = ['GET'])
 def camera():
-	if request.method == 'GET':
-		return render_template('camera.html', title='Camera')
-	else:
-		return jsonify(request.form['userID'], request.form['file'])
+	return render_template('camera.html', title='Camera')
 
 @app.route('/gallery')
 def gallery():
 	return render_template('gallery.html', title='Gallery')
 
-@app.route('/post_image', methods = ['POST'])
-def postmethod():
-	img = request.form['javascript_data']
-	return img
-
-@app.route('/getmethod/<jsdata>')
-def get_img(img):
-	return img
+@app.route("/upload", methods=['POST'])
+ def upload():
+    return send_from_directory('/myimages','test.jpeg')
