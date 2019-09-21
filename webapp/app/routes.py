@@ -19,7 +19,9 @@ def gallery():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	return render_template('gallery.html', title='Gallery')
+	if request.method == "POST":
+		clicked=request.json['data']
+	return render_template('postsuccess.html', title='Gallery')
 
 @app.route("/postsuccess", methods=['GET'])
 def postsuccess():

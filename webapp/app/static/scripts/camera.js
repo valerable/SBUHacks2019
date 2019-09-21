@@ -69,8 +69,13 @@ function snapshot() {
 	var fd = new FormData(document.forms[0]);
 	var xhr = new XMLHttpRequest();
 	fd.append("myFile", blob);
-	xhr.open('POST', '/upload', true);
-	xhr.send(fd);
+	$.ajax({
+		type : 'POST',
+		url : "{{url_for('upload')}}",
+		contentType: 'application/json;charset=UTF-8',
+		data : fd
+	});
+
 }
 
 
