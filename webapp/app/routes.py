@@ -11,3 +11,7 @@ def index():
 @app.route('/camera')
 def camera():
 	return render_template('camera.html', title='Camera')
+
+@app.route('/gallery')
+def gallery():
+	return render_template('gallery.html', title='Gallery')
