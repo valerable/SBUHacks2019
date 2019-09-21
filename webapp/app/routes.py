@@ -29,8 +29,8 @@ def upload():
 	myid = random.randint(1,5000)
 	if request.method == 'POST':
 		print('did this work?')
-
-		data_url = request.form('imageBase64')   # here parse the data_url out http://xxxxx/?image={dataURL}
+		d = request.form.to_dict()
+		data_url = d['imageBase64']   # here parse the data_url out http://xxxxx/?image={dataURL}
 		print(type(data_url))
 		print(data_url)
 		data_url = str(data_url)
