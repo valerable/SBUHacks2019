@@ -16,5 +16,5 @@ def gallery():
 	return render_template('gallery.html', title='Gallery')
 
 @app.route("/upload", methods=['POST'])
- def upload():
-    return send_from_directory('/myimages','test.jpeg')
+def upload():
+	return send_from_directory('/myimages','test.jpeg')
