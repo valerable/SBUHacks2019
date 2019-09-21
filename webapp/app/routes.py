@@ -90,6 +90,6 @@ def send_to_img_processor(img,index,myid):
 	os.system('python' + ' ' + img_processor_path + ' ' + base_img + ' ' + style_img_dir + styles_list[index] + '.jpg' + ' ' + final_img_path + '--num_iter' + ' ' + str(iterations))
 	#now we have to move the final iteration to a different folder
 	gallery_path = '/static/gallery/'
-	os.system('mv' + ' ' + final_img_path + '_at_iteration_' + iterations + '.png' + ' ' + gallery_path + 'final_image_' + str(myid) + '.png')
+	os.system('mv' + ' ' + final_img_path + '_at_iteration_' + str(iterations) + '.png' + ' ' + gallery_path + 'final_image_' + str(myid) + '.png')
 	#after the move, we delete the tmp fodler
 	os.system('rm -rf' + ' ' + final_img_path + ' ' + img)
