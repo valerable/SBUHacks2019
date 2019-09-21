@@ -39,7 +39,7 @@ def upload():
 		image_b64 = base64.standard_b64decode(image_encoded.encode('utf-8'))
 		print('request')
 		path = "/../../final/", "base_" + str(myid) + ".jpg"
-		fh = open(path, "wb")
+		fh = open(path, "w+")
 		fh.write(image_b64.decode('base64'))
 		fh.close()
 		print('maybe')
