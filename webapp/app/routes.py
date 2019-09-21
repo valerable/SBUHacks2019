@@ -19,8 +19,11 @@ def gallery():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-	return "I GOT THE POST"
-	#return send_from_directory('/myimages','test.jpeg')
+	return render_template('gallery.html', title='Gallery')
+
+@app.route("/postsuccess", methods=['GET'])
+def postsuccess():
+	return render_template('postsuccess.html')
 
 def count_images():
 	gallery_path = '/static/gallery/'

@@ -69,7 +69,7 @@ function snapshot() {
 	var fd = new FormData(document.forms[0]);
 	var xhr = new XMLHttpRequest();
 	fd.append("myFile", blob);
-	xhr.open('POST', '/', true);
+	xhr.open('POST', '/upload', true);
 	xhr.send(fd);
 }
 
