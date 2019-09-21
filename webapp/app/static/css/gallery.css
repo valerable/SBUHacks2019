@@ -13,11 +13,38 @@ body {
     background-color: #342643;
     height: 100%;
     color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
+li {
+    float: left;
+    margin: 1px;
+    max-width: 10%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: white;
+    color: #342643;
+    border-radius: 26px;
+    transition: all 0.2s ease-in-out;
+}
+
 .container {
-    padding: 3%;
     margin: auto;
     max-width: 80%;
     text-align: center;
@@ -32,9 +59,8 @@ body {
     flex-wrap: wrap;
 }
 
-.gallery > img {
-    float: left;
-    margin: 0 0.877192825%;
+.list > img {
+    margin: 2%;
     overflow: hidden;
-    max-width: 50%;
+    max-width: 40%;
 }
