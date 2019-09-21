@@ -1,18 +1,18 @@
 <html>
 <head>
 <title>{{ title }} - art sbuhacks</title>
-<script src="scripts/jquery-3.4.1.min.js"> </script>
 
 </head>
 
 <body>
 <p> app goes here </p>
-<video autoplay width="640" height="480"> </video> 
-<img id="screenshot">
-<canvas style="display: none;" width="640" height="480"> </canvas>
-<button id="screenshot-button"> Screenshot</button>
-<button id="capture-button"> Capture </button>
+	<form method="POST" id="myForm">
+		<input type="text" name="userID">
 
-<script src="./scripts/script.js"> </script>
+    	<input type="button" value="Upload" onclick="upload()">
+    </form>
+    <div id="my_camera"></div>
+    	<input type="button" onclick="snap()" value="Snap">
+    <div id="results"></div>
 </body>
 </html>

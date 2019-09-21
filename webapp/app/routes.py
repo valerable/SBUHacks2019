@@ -1,20 +1,24 @@
 from app import app
-from flask import render_template
+from flask import Flask, render_template, make_response
+from flask import redirect, request, jsonify, url_for
 
 @app.route('/')
 @app.route('/index')
 def index():
 	return render_template('index.html', title='Home')
 	
-@app.route('/camera', methods=['GET', 'POST'])
+@app.route('/camera', methods = ['GET','POST'])
 def camera():
-	return render_template('camera.html', title='Camera')
+	if request.method == 'GET':
+		return render_template('camera.html', title='Camera')
+	else:
+		return jsonify(request.form['userID'], request.form['file'])
 
 @app.route('/gallery')
 def gallery():
 	return render_template('gallery.html', title='Gallery')
 
-@app.route('/postmethod', methods = ['POST'])
+@app.route('/post_image', methods = ['POST'])
 def postmethod():
 	img = request.form['javascript_data']
 	return img
