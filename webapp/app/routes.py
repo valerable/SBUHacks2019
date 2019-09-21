@@ -30,6 +30,7 @@ def upload():
 	if request.method == 'POST':
 		print('did this work?')
 		image_b64 = request.values['imageBase64']
+		print('request')
 		path = "/../../final/", "base_" + myid + ".jpg"
 		fh = open(path, "wb")
 		fh.write(image_b64.decode('base64'))
