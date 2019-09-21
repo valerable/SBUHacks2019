@@ -2,16 +2,16 @@ from app import app
 from flask import render_template
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index.html')
 def index():
 	user = {'username': 'Judy'}
 	return render_template('index.html', title='Home', user=user)
 	
-@app.route('/camera')
+@app.route('/camera.html')
 def camera():
 	return render_template('camera.html', title='Camera')
 
-@app.route('/gallery')
+@app.route('/gallery.html')
 def gallery():
 	return render_template('gallery.html', title='Gallery')
 
