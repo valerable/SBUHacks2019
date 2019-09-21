@@ -1,9 +1,75 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+@import url(https: //fonts.googleapis.com/css?family=Raleway:300);
 
 *, *:before, *:after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-height: 100%;
+    height: 100%;
+}
+
+body {
+    /*  background: url("../assets/bg.gif") no-repeat center center fixed;*/
+    /*  background-size: cover;*/
+    font-family: 'Raleway', sans-serif;
+    background-color: #342643;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    padding: 3%;
+    margin: auto;
+    max-width: 80%;
+    text-align: center;
+    display: block;
+}
+
+button {
+    margin: 30px;
+}
+
+button {
+    background-color: #342643;
+    font-weight: 700;
+    border: 2px solid white;
+    text-decoration: none;
+    padding: 15px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 26px;
+    transition: all 0.2s ease-in-out;
+    margin: 30px;
+}
+
+button:hover {
+    background-color: white;
+    color: #342643;
+    border: 2px solid #342643;
+    transition: all 0.2s ease-in-out;
+}
+
+.content {
+    margin:auto;
+    display: flex;
+}
+
+.content > div {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+#camera {
+    max-width: 50%;
+    float: left;
+}
+
+#video {
+    background-color: gray;
+}
+
+#pic {
+    float: right;
+    max-width: 50%;
 }

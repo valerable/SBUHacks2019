@@ -1,24 +1,27 @@
 <html>
 <head>
-<title>Re:Define</title>
-
+    <title>Re:Define</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/camera.css" />
 </head>
-<body>
 
-<p> app goes here </p>
-	<body onload="init();">
-	  <h1>Take a snapshot of the current video stream</h1> Click on the Start WebCam button.
-	  <p>
-	    <button onclick="startWebcam();">Start WebCam</button>
-	    <button type="submit" id="dl-btn" href="#" download="participant.jpeg" onclick="snapshot();">Take Snapshot</button>
-	  </p>
-	  <video onclick="snapshot();" width=400 height=400 id="video" controls autoplay></video>
-	  <p>
+<body onload="init();">
+    <div class="container">
+        <h1>Take a snapshot of the current video stream</h1>
+        <p>Click on the Start WebCam button.</p>
+        <button onclick="startWebcam();">Start WebCam</button>
+        <button type="submit" id="dl-btn" href="#" download="participant.jpeg" onclick="snapshot();">Take Snapshot</button><br>
+        <div class="content">
+            <div id="camera">
+                <p>Camera:</p>
+                <video onclick="snapshot();" width=400 height=400 id="video" controls autoplay></video>
+            </div>
+            <div id="pic">
+                <p>Picture:</p>
+                <canvas id="myCanvas" width="400" height="400"></canvas>
+            </div>
+        </div>
 
-	    Screenshots :
-	    <p>
-	      <canvas id="myCanvas" width="400" height="350"></canvas>
-	    </p>
-<script type="text/javascript" src="../static/scripts/camera.js"></script>
+    </div>
+    <script type="text/javascript" src="../static/scripts/camera.js"></script>
 </body>
 </html>
